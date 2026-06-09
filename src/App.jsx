@@ -6,6 +6,7 @@ import stockGang from './assets/stock_gang.png'
 import './App.css'
 import { useEffect } from 'react';
 import SearchBar from './components/SearchBar';
+import { Analytics } from "@vercel/analytics/next"
 
 
 const Card = ({description, skibidi}) =>{
@@ -50,6 +51,7 @@ function App()
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
     </header>
   </main>
+  <Analytics />
   </>
   )
 }
