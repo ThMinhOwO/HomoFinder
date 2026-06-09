@@ -7,6 +7,7 @@ import './App.css'
 import { useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import { Analytics } from "@vercel/analytics/next"
+import { useParams, usePathname, useSearchParams } from "next/navigation.js";
 
 
 const Card = ({description, skibidi}) =>{
