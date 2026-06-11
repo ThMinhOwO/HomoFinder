@@ -42,6 +42,31 @@ const Card = ({description, skibidi}) =>{
 function App() 
 {
   const [searchTerm, setSearchTerm] = useState("");
+  const sstk = require("shutterstock-api");
+
+  sstk.setAccessToken(project.env.SHUTTERSTOCK_API_TOKEN);
+
+  const imagesApi = new sstk.ImagesApi();
+
+  const queryParams = {
+    "query": "kites"
+  };
+
+  imagesApi.searchImages(queryParams)
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  // imagesApi.searchImages(queryParams)
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
   return(
   <>
   <main>
